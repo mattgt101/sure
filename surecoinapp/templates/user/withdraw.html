@@ -1,0 +1,42 @@
+{% extends 'user/account.html' %}
+{% block title %}
+deposit
+{% endblock %}
+
+{% block name %}
+DEPOSIT
+{% endblock %}
+
+
+{% block main %}
+<form method="post" target="_self">
+    {% csrf_token %}
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;">
+    TOTAL BALANCE :<br/>
+    <span style="font-size:10ex;">${{user.balance}}</span>
+
+    <div style="position:absolute;margin-top:-18ex;right:15%;width:40%;text-align:right;">
+
+        <br/>
+        +<br/>
+        REFERRAL BONUS: <span style="font-size:4ex;">${{user.ref_bal}}.0</span>
+    </div>
+</div>
+
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;margin-top:5ex;">
+    <div class="col s12">
+        <label>WITHDRAW FUNDS TO :</label><br/>
+        <i class="im im-cc-bitcoin" style="color:#ff9800;position:absolute;"></i> <span style="color:white;margin-left:5%;">wyqe761621hgdt</span>
+    </div>
+    <div class="col s8">
+        <br/>
+        <input name="amt" type="text" style="background-color:white;padding-left:1ex;" placeholder="Amount">
+    </div>
+    <div class="col s4">
+        <button class="btn waves-effect" type="submit" style="margin-top:4ex;">SEND</button>
+    </div>
+</div>
+    </form>
+{% endblock %}

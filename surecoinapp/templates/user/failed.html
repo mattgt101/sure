@@ -1,0 +1,28 @@
+{% extends 'auth/signup.html' %}
+{% block title %}
+withdraw failed
+{% endblock %}
+
+{% block name %}
+WITHDRAW
+{% endblock %}
+
+{% block signup %}
+<div class="row">
+    <div class="col s8 push-s2" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+           padding:2ex;color:white;margin-top:3ex;">
+        <center>
+            <span class="material-icons" style="color:red;font-size:15ex;">
+            error
+            </span>
+            <h4>REQUEST FAILED</h4>
+            <P> insufficient balance </P>
+
+            <a href="/account/" class="btn waves-effect blue">okay</a>
+        </center>
+
+
+    </div>
+
+</div>
+{% endblock %}

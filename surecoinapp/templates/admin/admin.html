@@ -1,0 +1,52 @@
+{% extends 'user/account.html' %}
+{% block title %}
+admin
+{% endblock %}
+
+{% block name %}
+ADMINISTRATION SETTINGS
+{% endblock %}
+
+{% block navb %}
+        <a href="/account/" class="waves-effect waves-light btn cc"><i class="material-icons left">account_circle</i>ACCOUNT</a>
+        <a href="/admin/" class="waves-effect waves-light btn cc"><i class="material-icons left">admin_panel_settings</i>ADMIN</a>
+        <a href="/site/" class="waves-effect waves-light btn cc"><i class="material-icons left">settings</i>SITE MANAGE</a>
+
+{% endblock%}
+
+{% block main %}
+  <div class="row">
+<P class="center red-text" style="text-transform:uppercase;">{{error}}</P>
+    {% for mem in mems %}
+    <div class="col s6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+            <span class="card-title">{{mem.user}} <span class="right">${{mem.balance}}.0</span> </span>
+            <p>Name: {{mem.name}} </p>
+          <p>Email: {{mem.email}} </p>
+          <p>Password: {{mem.password}} </p>
+           <p>wallet: {{mem.wallet}}</p>
+            <br/>
+            <p>
+                <form method="post" target="_self">
+            {% csrf_token %}
+            <input name="approve" value="{{mem.active_deposit}}" style="display:none;">
+             <input name="memb" value="{{mem.user}}" style="display:none;">
+             <button class="btn waves-effect" type="submit">Approve pay ${{mem.active_deposit}}</button> <span class="right">Active Dep <br/>${{mem.pay_approve}}.0</span>
+
+
+        </form>
+<!--            <a href="https://surecoin.uk/admin/?user={{mem.user}}&approve={{mem.active_deposit}}" class="btn waves-effect">Approve deposit ${{mem.active_deposit}}</a> <span class="right">Active Dep <br/>${{mem.pay_approve}}.0</span>-->
+            </p>
+        </div>
+        <div class="card-action">
+          <span class="material-icons white-text"> delete</span><a href="/admin/?delete={{mem.user}}">This is a link</a>
+            <span class="right"><span class="material-icons white-text"> manage_accounts</span>  <a href="/admin/?user={{mem.user}}">Edit</a></span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'user/account.html' %}
+{% block title %}
+security
+{% endblock %}
+
+{% block name %}
+TWO FACTOR AUTHENTICATION
+{% endblock %}
+
+
+{% block main %}
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;">
+
+    <div class="col 12" style="width:100%;">
+      <p>Two factory authentication helps keep your account safe by requesting for your 4digit pin
+      very time you access your account to prevent any funds from thieves or fraudster. </p>
+    </div>
+</div>
+
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;margin-top:3ex;">
+<form method="post" target="_self">
+    {% csrf_token %}
+    <div class="col 12" style="width:100%;">
+      <h5>set a 4-Digit pin to activate your 2FA</h5>
+        <p class="col s4">
+            <input name="pin" placeholder="- - - - " style="background-color:white;text-align:center;" maxlength="4" type="text">
+        </p>
+
+       <p class="col s4">
+           <button class="btn waves-effect blue pulse" style="height:6.5ex;">activate</button>
+        </p>
+    </div>
+</form>
+
+</div>
+{% endblock %}

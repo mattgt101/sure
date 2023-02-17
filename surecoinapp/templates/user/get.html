@@ -1,0 +1,29 @@
+{% extends 'user/account.html' %}
+{% block title %}
+referred
+{% endblock %}
+
+{% block name %}
+REFERRED
+{% endblock %}
+
+
+{% block main %}
+
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;margin-bottom:3ex;">
+    <span>REFERRAL BONUS : </span><span style=":font-size:10ex ;">${{user.ref_bal}}.0</span>
+</div>
+
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;height:40ex;overflow-y:scroll;">
+
+    <p>These are the list of people you referred !!</p>
+    {% for ref in refs %}
+    <p><i class="material-icons left">person_add_alt</i>{{ref.invited}}</p>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

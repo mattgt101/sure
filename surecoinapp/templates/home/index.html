@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <title>{% block title %} surecoin {% endblock %}</title>
+    <!--the jquery link-->
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import Iconmonstra Font-->
+    <link href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet">
+
+    <script src="//code-eu1.jivosite.com/widget/tnP99BsgL8" async></script>
+
+
+    <style>
+    /* for mobile styling */
+        @media (min-width:992px){
+
+
+        }
+
+        /* for desktop styling */
+        @media (min-width:992px){
+        .slcap{margin-top:-40ex !important;color:white; font-size:5ex !important;}
+        .ccb{margin-top:32ex;position:absolute;}
+        }
+
+    </style>
+</head>
+<body style="width:100%;overflow-x:hidden;">
+<!--the simple nav-->
+<nav class="row" style="padding:3ex 3ex 9ex 3ex; background-color:#18338a;">
+    <div class="col s2">
+        <span class="material-icons prefix" style="font-size:5ex;">        support_agent
+        </span><span>contact us</span>
+
+
+    </div>
+
+    <div class="col s3 nav-wrapper">
+        <ul>
+            <li><a href="{{site.tele}}"><span class="material-icons prefix">telegram</span>
+            </a></li>
+            <li><a href="{{site.wh}}"><span class="material-icons whatsapp">whatsapp</span>
+            </a></li>
+            <li><a href="{{site.fb}}"><span class="im im-facebook "></span>
+            </a></li>
+        </ul>
+    </div>
+
+    <div class="col s2">
+        <a href="/login/">  <span class="material-icons prefix">login</span><span>LOGIN</span> </a>
+    </div>
+
+    <div class="col s2">
+        <a href="/signup/">   <span class="material-icons prefix">how_to_reg</span><span>Sign UP</span></a>
+    </div>
+
+    <div class="col s1">
+        <img src="{% static 'large-american-flag-button-sp.jpg' %}" style="width:80%;
+        margin-top:-2ex;border-radius:3ex;">
+    </div>
+
+    <div class="col s1">
+        <img src="{% static 'R.jpg' %}" style="width:80%;
+        margin-top:-2ex;border-radius:3ex;">
+    </div>
+
+
+
+    <div class="col s1">
+        <img src="{% static 'sa.jpg' %}" style="width:100%;
+        margin-top:-2ex;border-radius:3ex;">
+    </div>
+
+</nav>
+
+<nav class="row" style="padding:3ex 3ex 9ex 3ex;margin-top:-3ex; background-color:#4e71e2;">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo left"><img src="https://www.surecon.in/img/surecon-logo-small.png" > <span>SURECOIN</span></a>
+        <ul id="nav-mobile" class="right">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about/">ABOUT US</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/term/">TERMS OF USE</a></li>
+            <li><a href="#footer">CONTACT US</a></li>
+            <li><a href="/livepay/" class="btn waves-effect" style="border-radius:3ex;">LIVES PAYMENT</a></li>
+        </ul>
+    </div>
+</nav>
+<!--the nav ends-->
+
+{% block content %}
+
+<!--the sl image-->
+<div style="clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 69% 76%, 41% 92%, 33% 77%, 0 100%);width:100%;border-bottom: 10ex solid red !important;margin-top:-4ex;">
+    <img src="https://th.bing.com/th/id/R.f923ba63b44cb5d790764cb68f070ed2?rik=BneKIyxdq7h%2fYQ&pid=ImgRaw&r=0" style="width:100%;">
+    <div class="slcap" style="position:absolute;margin-top:-40ex;color:white;font-size:4ex;margin-left:10%;">
+        <p>SURECOIN LIMTED</p>
+        <h5 class="slhead" style="font-size:4ex;">
+            <b>  SUREST PLACE TO INVEST  <br/>
+                AND GROW FINANCIALLY</b>
+        </h5>
+        <p>What if there should add Edge on your Portfolio!</p>
+        <div class="row">
+            <div class="col s4"><a href="/signup/" class="btn-large waves-effect" style="border-radius:3ex;">CREATE AN ACCOUNT</a></div>
+
+            <div class="col s4"><a href="/login/" class="btn-large waves-effect" style="border-radius:3ex;">LOGIN</a></div>
+        </div>
+    </div>
+</div>
+<!--the sl image ends-->
+
+<!--the cards-->
+<div class="row">
+
+    <div class="col s3">
+        <div class="card darken-1" style="background-color:#0f7095;">
+            <div class="card-content white-text">
+                <span class="card-title center" style="border:2px solid white;border-radius:3ex;padding:1ex;position:relative;font-size:2.8ex;margin-bottom:-2ex;z-index:2;background:#4e71e2;">BEGINNER PLAN</span>
+                <div class="center" style="width:100%;background:#190e51;padding-top:5ex;z-index:1;position:relative;">
+                    <p style="font-size:4.5ex;"><b><i>15%</i></b></p>
+                    <p style="color:#ff9800;"><i>After 24hours</i></p><br/>
+                </div>
+                <center>
+                    <br/>
+                    <p>Min - Max <br/>Investment</p>
+                    <p>$20 - $499</p>
+                    <br/>
+                    <a class="btn waves-effect pulse">Invest now</a>
+
+                </center>
+            </div>
+
+        </div>
+    </div>
+    <div class="col s3">
+        <div class="card darken-1" style="background-color:#0f7095;">
+            <div class="card-content white-text">
+                <span class="card-title center" style="border:2px solid white;border-radius:3ex;padding:1ex;position:relative;font-size:2.8ex;margin-bottom:-2ex;z-index:2;background:#4e71e2;">ACTIVE PLAN</span>
+                <div class="center" style="width:100%;background:#190e51;padding-top:5ex;z-index:1;position:relative;">
+                    <p style="font-size:4.5ex;"><b><i>35%</i></b></p>
+                    <p style="color:#ff9800;"><i>After 48hours</i></p><br/>
+                </div>
+                <center>
+                    <br/>
+                    <p>Min - Max <br/>Investment</p>
+                    <p>$500 - $999</p>
+                    <br/>
+                    <a class="btn waves-effect pulse">Invest now</a>
+
+                </center>
+            </div>
+
+        </div>
+    </div>
+    <div class="col s3">
+        <div class="card darken-1" style="background-color:#0f7095;">
+            <div class="card-content white-text">
+                <span class="card-title center" style="border:2px solid white;border-radius:3ex;padding:1ex;position:relative;font-size:2.8ex;margin-bottom:-2ex;z-index:2;background:#4e71e2;">GROWTH PLAN</span>
+                <div class="center" style="width:100%;background:#190e51;padding-top:5ex;z-index:1;position:relative;">
+                    <p style="font-size:4.5ex;"><b><i>60%</i></b></p>
+                    <p style="color:#ff9800;"><i>After 24hours</i></p><br/>
+                </div>
+                <center>
+                    <br/>
+                    <p>Min - Max <br/>Investment</p>
+                    <p>$1000 - $2999</p>
+                    <br/>
+                    <a class="btn waves-effect pulse">Invest now</a>
+
+                </center>
+            </div>
+
+        </div>
+    </div>
+    <div class="col s3">
+        <div class="card darken-1" style="background-color:#0f7095;">
+            <div class="card-content white-text">
+                <span class="card-title center" style="border:2px solid white;border-radius:3ex;padding:1ex;position:relative;font-size:2.8ex;margin-bottom:-2ex;z-index:2;background:#4e71e2;">CLASSIC PLAN</span>
+                <div class="center" style="width:100%;background:#190e51;padding-top:5ex;z-index:1;position:relative;">
+                    <p style="font-size:4.5ex;"><b><i>90%</i></b></p>
+                    <p style="color:#ff9800;"><i>After 48hours</i></p><br/>
+                </div>
+                <center>
+                    <br/>
+                    <p>Min - Max <br/>Investment</p>
+                    <p>$3000 - $4999</p>
+                    <br/>
+                    <a class="btn waves-effect pulse">Invest now</a>
+
+                </center>
+            </div>
+
+        </div>
+    </div>
+    <br/><br/>
+
+
+
+</div>
+<div class="row">
+    <center>
+    <div class="col s3 push-s4 " style="">
+        <div class="card darken-1" style="background-color:#0f7095;">
+            <div class="card-content white-text">
+        <span class="card-title center" style="border:2px solid white;border-radius:3ex;padding:1ex;position:relative;font-size:2.8ex;margin-bottom:-2ex;z-index:2;background:#4e71e2;">
+            <span class="material-icons prefix">
+            military_tech
+            </span> <br/>
+           VIP PLAN</span>
+                <div class="center" style="width:100%;background:#190e51;padding-top:5ex;z-index:1;position:relative;">
+                    <p style="font-size:4.5ex;"><b><i>120%</i></b></p>
+                    <p style="color:#ff9800;"><i>After 24hours</i></p><br/>
+                </div>
+                <center>
+                    <br/>
+                    <p>Min - Max <br/>Investment</p>
+                    <p>$5000 - unlimited </p>
+                    <br/>
+                    <a class="btn waves-effect pulse">Invest now</a>
+
+                </center>
+            </div>
+
+        </div>
+    </div>
+        </center>
+</div >
+
+<!--the cards ends-->
+
+<!--the calculator-->
+<div class="row" style="background-color:#18338a;width:100%;">
+    <br/>
+    <h2 style="text-align:center;color:white;"><b>(%)PERCENTAGE CALCULATOR </b></h2>
+    <div class="col s2"><i class="im im-calculator" style="font-size:15ex; color:white;"></i></div>
+    <div class="col s3">
+        <span style="font-size:4ex;color:white;">ENTER AMOUNT</span><br/>
+        <input oninput="cal()" id="amt" type="text" style="background-color:white;padding:1ex;font-size:5ex;margin-top:1ex;width:100%;"value="20">
+    </div>
+    <div class="col s3" style="margin-left:3.5ex;">
+        <span style="font-size:4ex;color:white;">SELECT PLAN</span><br/>
+        <div style="border:2px solid white;background-color:white;padding:1.5ex;margin-top:2.5ex;">
+            <select id="plan" name="plan" onchange="cal()">
+                <option value="BASIC PLAN">BEGINNER PLAN</option>
+                <option value="CLASSIC PLAN">ACTIVE PLAN</option>
+                <option value="OPTIMISTIC PLAN">GROWTH PLAN</option>
+                <option value="PREMIUM PLAN">CLASSIC PLAN</option>
+                <option value="VIP PLAN">VIP PLAN</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col s3" style="margin-left:3.5ex;">
+        <span style="font-size:4ex;color:white;">PROFIT ( $ ) </span><br/>
+        <div style="border:2px solid white;background-color:white;padding:1.5ex;margin-top:2.5ex;">
+            <span style="font-size:5ex;" id="profit">23</span>
+        </div>
+    </div>
+</div>
+<!--end calculator-->
+
+<!--the welcome note-->
+<div class="row">
+    <div class="col s5 l6">
+        <h4>WELCOME TO</h4>
+        <h3><b>SURECOIN LIMITED</b></h3>
+        <p>
+Surecoin limited is a rapidly developing investment project, participation in which allows our partners to earn on changes in quotations of virtual currencies without direct participation in the trading process. Our company united professional traders, financial analysts, marketers and specialists of other profiles, whose experience and knowledge allow to improve economic performance and increase working capital, successfully using both the growth and the fall in the value of cryptocurrencies. The trading strategy, specially designed for making deals with different types of cryptocurrencies, is easily adjusted depending on the situation on the market, so every trading day we close with a positive balance.
+Based on these factors, the company's management decided to attract private investments, which will significantly increase the volume of transactions. This, in turn, will lead to a multiple increase in the total profit of the company, which is proportionally distributed among all involved investors.
+Participation in our project will be a fundamental basis for improving your financial well-being, because even small investments in cryptocurrency trading will now bring huge dividends in the near future.        </p>
+    </div>
+    <div class="col s7 l6" style="clip-path: polygon(59% 0, 100% 0%, 100% 100%, 25% 100%, 0% 50%);">
+        <img src="https://koinworks.com/wp-content/uploads/2020/12/cara-.membuat-kartu-kredit.jpg" style="width:100%;overflow-x:hidden;">
+
+    </div>
+
+</div>
+<!--end welcome note-->
+
+<!--the parallax -->
+
+<div class="parallax-container" style="height:100ex;">
+    <div class="parallax"><img src="https://renovo.uk.com/wp-content/uploads/2018/10/Optimising-your-CV-for-Applicant-Tracking-Systems-ATS.jpg" style="width:450%;"></div>
+</div>
+<!--the parralax info-->
+<div class="row" style="position:absolute;margin-top:-95ex;margin-left:3ex;width:100%;">
+    <div style="background-color:#0048ff38;width:100%;height:70ex;">
+        <h4 style="color:black;"><b>WHY CHOOSE</b></h4>
+        <h3 style="color:white;"><b>SURECOIN LIMITED </b></h3>
+        <br/>
+        <div class="col s4 center">
+            <i class="im im-shield" style="font-size:10ex;color:;background-color:#ffc107;padding:0.5ex;"></i>
+            <h5><b>Highly Secured</b> </h5>
+            <p>
+                SureCoin have SSL connection, cold storages and the strongest anti-DDoS. It allows to protect your funds on our platform.
+            </p>
+        </div>
+
+        <div class="col s4 center">
+            <i class="im im-timer" style="font-size:10ex;color:;background-color:#ffc107;padding:0.5ex;"></i>
+            <h5><b>Fast Withdrawals </b> </h5>
+            <p>
+                Our team works every day. It guarantees that the withdrawal request will be processed Instant. </p>
+
+        </div>
+
+        <div class="col s4 center">
+            <i class="im im-support" style="font-size:10ex;color:;background-color:#ffc107;padding:0.5ex;"></i>
+            <h5><b>Support 24/7</b> </h5>
+            <p>
+                You can find any answer to your questions in the FAQ Page. If you need help please contact us any time 24/7.
+            </p>
+
+        </div>
+
+        <div class="col s4 center">
+            <i class="im im-certificate-o" style="font-size:10ex;color:;background-color:#ffc107;padding:0.5ex;"></i>
+            <h5><b>Company Registration</b> </h5>
+            <p>SureCoin limited is officially registered in the United kingdom and has an number 11370313.</p>
+        </div>
+
+        <div class="col s4 center">
+            <i class="im im-server" style="font-size:10ex;color:;background-color:#ffc107;padding:0.5ex;"></i>
+            <h5><b>Work automated</b> </h5>
+            <p>It does not require for investors to have any special knowledge to make profit with us.</p>
+
+        </div>
+
+        <div class="col s4  center ccb">
+            <i class="im im-cc-bitcoin" style="font-size:10ex;color:;background-color:#ffc107;padding:0.5ex;"></i>
+            <h5><b>Passive income</b> </h5>
+            <p>
+                We provide the best solution to get passive income on investment with the minimum amount of $10.
+            </p>
+
+        </div>
+
+    </div>
+</div>
+<!--the parralax info ends-->
+
+<div class="section white">
+    <div class="row container">
+        <h4 class="header">PARTNER PROGRAM</h4>
+        <h2 class="header">REFERRAL COMMISSION</h2>
+        <p class="grey-text text-darken-3 lighten-3" style="font-size:3.5ex;">
+            SureCoin provide 3 Level commission 5% - 2% -1% from deposit for our investors who invite their friends & family members.        </p>
+    </div>
+    <div class="row center">
+        <div class="col s4">
+            <p style="font-size:15ex;"><b>5%</b><br/>
+            </p>
+            <span style="font-size:4ex !important;margin-top:-6ex;position:absolute;margin-left:-4.8ex;">1st level</span>
+        </div>
+
+        <div class="col s4">
+            <p style="font-size:15ex;"><b>2%</b><br/>
+            </p>
+            <span style="font-size:4ex !important;margin-top:-6ex;position:absolute;margin-left:-4.8ex;">2st level</span>
+        </div>
+
+        <div class="col s4">
+            <p style="font-size:15ex;"><b>1%</b><br/>
+            </p>
+            <span style="font-size:4ex !important;margin-top:-6ex;position:absolute;margin-left:-4.8ex;">3st level</span>
+        </div>
+        <a class="btn waves-effect pulse">read more</a>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="https://tse1.mm.bing.net/th?id=OIP.zNaFQ_7Hfo7PRuy0RG1KJgHaEL&pid=1.7&w=344&h=198&c=8&dpr=1.5"></div>
+</div>
+<div class="row" style="position:absolute;margin-top:-30ex;color:#fff070ed;width:100%;background-color:#673ab7ad;">
+    <div class="col s3 center">
+        <i class="im im-dashboard" style="font-size:10ex;"></i>
+        <h3>340</h3>
+        <p>RUNNING DAYS</p>
+    </div>
+
+    <div class="col s3 center">
+        <i class="im im-user-male" style="font-size:10ex;"></i>
+        <h3>1200</h3>
+        <p>TOTAL ACCOUNT</p>
+    </div>
+
+    <div class="col s3 center">
+        <i class="im im-banknote" style="font-size:10ex;"></i>
+        <h3>$1386335.71</h3>
+        <p>TOTAL DEPOSIT</p>
+    </div>
+
+    <div class="col s3 center" style="">
+        <i class="im im-bank" style="font-size:10ex;"></i>
+        <h3>$3322911.96</h3>
+        <p>TOTAL WITHDRAW</p>
+    </div>
+
+</div>
+<!--end parallax-->
+<br/>
+<!--table-->
+<div class="row" style="margin-left:12%;">
+
+    <div class="col s5 s12 center" style="margin-left:2ex;">
+        <div style="background-color:#18338a;padding:2ex;color:white;border-radius:2ex 2ex 0ex 0ex;">
+            <h5 class="center">RECENT WITHDRAWALS </h5>
+        </div>
+        <table style="display:none;">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+
+            {% for his_w in wit %}
+            {% ifequal his_w.status 'successful' %}
+            <tbody>
+            <tr>
+                <td>{{his_w.user}}</td>
+                <td>${{his_w.amount}}</td>
+                <td><span style="border:2px solid blue;border-radius:2ex;background-color:blue;color:white;padding:1ex;"><b>BTC</b></span></td>
+                <td>{{his_w.date.date}}</td>
+            </tr>
+            </tbody>
+            {% endifequal %}
+            {% endfor %}
+        </table>
+
+        <div style="background-color:#18338a;padding:1ex;color:white;border-radius:0ex 0ex 2ex 2ex;">
+        </div>
+
+    </div>
+</div>
+<br/>
+<!--end table-->
+<!--the marquee-->
+
+<!--end the marquee-->
+{% endblock %}
+
+<!--the foooter-->
+<footer class="page-footer" style="    background-color:#18338a;">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s6">
+                <h5 class="white-text">SURECOIN</h5>
+                <p class="grey-text text-lighten-4">
+                    The company has registration number is 12066693 and it is located at Lynton House, 7-12 Tavistock Square, London, England, WC1H 9BQ .
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s2">
+                <h5 class="white-text" id="footer">CONTACTS</h5>
+                <ul>
+                    <li><a href="mailto:{{site.mail}}" class="grey-text text-lighten-3" ><i class="im im-mail"></i> support</a></li>
+                    <li><a  class="grey-text text-lighten-3" ><i class="im im-phone"> {{site.phone}}</i></a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{site.wh}}"><i class="im im-whatsapp"></i>whatsapp</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{site.tele}}"><span class="material-icons">
+                                                                                telegram
+                                                                                </span>telegram
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2020 Copyright surecoin.uk
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+<!--footer ends-->
+<script>
+  $(document).ready(function(){
+    $('select').formSelect();
+    $('.parallax').parallax();
+  });
+
+  amt = document.getElementById("amt");
+  plan = document.getElementById("plan");
+  profit = document.getElementById("profit");
+
+
+  function cal(){
+       if (plan.value=='BEGINNER PLAN'){
+            if(amt.value  > 19.9){
+                per = 0.15 * amt.value ;
+                pro = per + parseInt(amt.value);
+                profit.innerHTML= pro;}
+            else{
+                amt.placeholder="Minimum - $20";
+                profit.innerHTML= 23;
+            }
+       }
+
+      if (plan.value=='ACTIVE PLAN'){
+            if(amt.value  > 499){
+                per = 0.35 * amt.value ;
+                pro = per + parseInt(amt.value);
+                profit.innerHTML= pro;}
+            else{
+
+                amt.placeholder="Minimum - $500";
+                profit.innerHTML= 675;
+
+            }
+      }
+
+     if (plan.value=='GROWTH PLAN'){
+            if(amt.value  > 999){
+                per = 0.60 * amt.value ;
+                pro = per + parseInt(amt.value);
+                profit.innerHTML= pro;}
+            else{
+
+                amt.placeholder="Minimum - $1000";
+                profit.innerHTML= 5700;
+            }
+     }
+
+     if (plan.value=='CLASSIC PLAN'){
+            if(amt.value  > 2999){
+                per = 0.90 * amt.value ;
+                pro = per + parseInt(amt.value);
+                profit.innerHTML= pro;}
+            else{
+
+               amt.placeholder="Minimum - $3000";
+               profit.innerHTML= 5700;
+            }
+     }
+
+     if (plan.value=='VIP PLAN'){
+            if(amt.value  > 4999){
+                per = 1.20 * amt.value ;
+                pro = per + parseInt(amt.value);
+                profit.innerHTML= pro;}
+            else{
+
+                amt.placeholder="Minimum - $11000";
+                profit.innerHTML= 11000;
+            }
+     }
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'auth/signup.html' %}
+{% block title %}
+enter pin
+{% endblock %}
+
+{% block name %}
+TWO FACTOR AUTHENTICATION
+{% endblock %}
+
+{% block form %}
+<style>
+      .wrapss{width:60% !important; margin-left:20% !important;}
+
+</style>
+            <center>
+                <p style="color:red;">{{error}}</p>
+            </center>
+
+      <div class="row">
+        <div class="input-field col s12">
+         <label>enter your 4-digit pin</label>
+          <input name="pin" id="text" placeholder="- - - - " type="text" class="validate" style="text-align:center;">
+
+        </div>
+      </div>
+<center>
+    <button class="btn-large waves-effect waves-light" type="submit">login</button>
+
+    <p>Don't have an account ? <a href="/signup/">sign-up</a></p>
+</center>
+{% endblock %}

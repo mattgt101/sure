@@ -1,0 +1,28 @@
+{% extends 'auth/signup.html' %}
+{% block title %}
+withdraw successful
+{% endblock %}
+
+{% block name %}
+WITHDRAW
+{% endblock %}
+
+{% block signup %}
+<div class="row">
+    <div class="col s8 push-s2" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+           padding:2ex;color:white;margin-top:3ex;">
+        <center>
+            <span class="material-icons" style="color:green;font-size:15ex;">
+            check_circle
+            </span>
+            <h4>CONGRATULATIONS!!!</h4>
+            <P> your transfer request was successful </P>
+
+            <a href="/account/" class="btn waves-effect blue">okay</a>
+        </center>
+
+
+    </div>
+
+</div>
+{% endblock %}

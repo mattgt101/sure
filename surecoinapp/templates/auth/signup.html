@@ -1,0 +1,70 @@
+{% extends 'home/index.html' %}
+{% block title %}creating a surecoin account {% endblock %}
+
+{% block content %}
+    <div class="parallax-container" style="height:30ex;margin-top:-3ex;width:100%;">
+      <div class="parallax"><img class="imgs" src="https://th.bing.com/th/id/R.807dec142b9b379badcde4a51662dfe6?rik=Sdo8qT%2bKi3HgjA&pid=ImgRaw&r=0" style="width:100%;"></div>
+    </div>
+    <div style="position:absolute;margin:-20ex 40%; ">
+        <h3 style="color:white;"><b>{% block name %}SIGN-UP{% endblock %}</b></h3>
+    </div>
+{% block signup %}
+<div class="row" style="margin-top:5ex;">
+    <form  method="POST" target="_self" class="col s8 push-s2">
+        {% csrf_token %}
+        <div class="row wrapss" style="border:2px solid #a6a6d58c;padding:4ex 2ex 8ex 2ex; z-depth-5">
+           {% block form %}
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input name="name" placeholder="Your Full Name" id="first_name" type="text" class="validate" required>
+                <label for="first_name">Full Name</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">person_add_alt</i>
+                <input name="user" id="last_name" type="text" class="validate" required>
+                <label for="last_name">Your Username</label>
+            </div>
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">password</i>
+                <input name="password" id="password" type="password" class="validate" required>
+                <label for="password">Define Your Password</label>
+            </div>
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">password</i>
+                <input id="last_na" type="password" class="validate" required>
+                <label for="last_na">Re-Type Password</label>
+            </div>
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mail</i>
+                <input name="email" id="last_" type="email" class="validate" required>
+                <label for="last_">Your Email-Address</label>
+            </div>
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_balance_wallet</i>
+                <input name="wallet" id="last" type="text" class="validate" required>
+                <label for="last">Your Bitcoin Wallet-Address</label>
+            </div>
+            <center>
+                <p style="text-transform:uppercase;">{{ref}}</p>
+                <p>
+
+                    <label>
+                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <span> I agree with<b><a href="/terms/"> Terms and conditions</a></b></span>
+                    </label>
+                </p>
+                <p>Already Registered <b><a href="/login/">Login</a></b></p>
+            <button class="btn-large waves-effect waves-light" type="submit">register</button>
+            </center>
+            {% endblock %}
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% endblock %}

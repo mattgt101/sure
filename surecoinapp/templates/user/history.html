@@ -1,0 +1,42 @@
+{% extends 'user/account.html' %}
+{% block title %}
+history
+{% endblock %}
+
+{% block name %}
+HISTORY
+{% endblock %}
+
+
+{% block main %}
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;">
+
+    <div class="col 12" style="width:100%;">
+        <table>
+            <thead>
+            <tr>
+                <th>Transaction</th>
+                <th>Status</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            {% for his in His %}
+                {% ifequal his.status 'successful' %}
+                    <tbody>
+                    <tr>
+                        <td>{{his.type}}</td>
+                        <td>{{his.status}}</td>
+                        <td>${{his.amount}}</td>
+                        <td>{{his.his_date}}</td>
+                    </tr>
+                    </tbody>
+                {% endifequal %}
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
+{% endblock %}

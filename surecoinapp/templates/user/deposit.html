@@ -1,0 +1,67 @@
+{% extends 'user/account.html' %}
+{% block title %}
+deposit
+{% endblock %}
+
+{% block name %}
+DEPOSIT
+{% endblock %}
+
+
+{% block main %}
+<form method="post" target="_self">
+{% csrf_token %}
+
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+           padding:2ex;color:white;">
+    <div class="row">
+        <div class="col s4">
+            <p>profit return</p>
+            <span style="font-size:8ex;">
+              $<span id="profit">23</span>
+          </span>
+            <div></div>
+        </div>
+
+        <div class="col s4">
+        </div>
+
+        <div class="col s4">
+            <p>PACKAGES</p>
+            <div style="background-color:#26a69a;color:white;padding:0ex 2ex 0ex 2ex;border-radius:2ex;margin-top:1ex;">
+                <select class="default-browser" name="plan" id="plan" onchange="cal()" ondurationchange="dur()">
+                    <option value="BEGINNER PLAN" selected> BEGINNER MIN- $20 </option>
+                    <option value="ACTIVE PLAN">ACTIVE MIN- $500</option>
+                    <option value="GROWTH PLAN">GROWTH MIN- $1000</option>
+                    <option value="CLASSIC PLAN">CLASSIC MIN- $3000</option>
+                    <option value="VIP PLAN">VIP MIN- $5000</option>
+                </select>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+   <div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+           padding:2ex;color:white;margin-top:2ex;">
+        <div class="row">
+            <div class="col s1">
+                <span style="font-size:4ex;margin:1ex 2ex;position:absolute;">$</span>
+
+            </div>
+            <div class="input-field col s9">
+                <input name="amt" id="amt" oninput="cal()" onfocus="prof()" value="20" type="text" class="validate" style="background-color:white;padding-left:1ex;">
+                <label for="amt">Amount</label>
+            </div>
+
+            <div class="col s2">
+                <button onclick="prof()" id="send" class="btn waves-effect blue" type="submit" style="margin-top:3ex;">spend</button>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

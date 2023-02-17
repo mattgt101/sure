@@ -1,0 +1,72 @@
+{% extends 'user/account.html' %}
+{% block title %}
+admin
+{% endblock %}
+
+{% block name %}
+ADMINISTRATION SETTINGS
+{% endblock %}
+
+{% block navb %}
+<a href="/account/" class="waves-effect waves-light btn cc"><i class="material-icons left">account_circle</i>ACCOUNT</a>
+<a href="/admin/" class="waves-effect waves-light btn cc"><i class="material-icons left">admin_panel_settings</i>ADMIN</a>
+<a href="//" class="waves-effect waves-light btn cc"><i class="material-icons left">settings</i>SITE MANAGE</a>
+
+{% endblock%}
+
+{% block main %}
+<div class="row">
+    <P class="center red-text" style="text-transform:uppercase;">{{error}}</P>
+
+
+    <div class="col s12">
+        <div class="card blue-grey darken-1">
+            <form method="POST" target="_self">
+                 {% csrf_token %}
+            <div class="card-content white-text">
+                <span class="card-title">manage site<span class="right"></span> </span>
+                <p>wallet : {{site.wallet}} </p>
+                <p>facebook: {{site.fb}} </p>
+                <p>telegram: {{site.tele}} </p>
+                <p>whatsapp: {{site.wh}} </p>
+                <p>gmail: {{site.mail}} </p>
+                <p>address: {{site.address}} </p>
+                <p>phone: {{site.pone}} </p>
+                <p>admin_access: {{site.adm_access}} </p>
+                <br/>
+
+                <label>MAKE UPDATE</label>
+
+                <select multiple id="select" onchange="sele()">
+
+                    <option value="wallet">wallet</option>
+                    <option value="fb">facebook</option>
+                    <option value="wh">whatsapp</option>
+                    <option value="tel">telegram</option>
+                    <option value="phone">phone</option>
+                    <option value="gmail">gmail</option>
+                    <option value="adm">admin_access</option>
+                </select>
+                <input name="update" class="white" placeholder="new value" type="text" style="padding-left:2ex;" >
+                <p class="center">
+                    <button  class="btn blue waves-effect " type="submit">update</button>
+                </p>
+            </div>
+            </form>
+                <div class="card-action">
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<script>
+     select = document.getElementById('select');
+     select2 = document.getElementById('select2');
+     function sele(){
+        select.name = select.value;
+
+             }
+</script>
+{% endblock %}

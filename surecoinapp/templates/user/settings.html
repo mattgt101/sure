@@ -1,0 +1,68 @@
+{% extends 'user/account.html' %}
+{% block title %}
+profile profile
+{% endblock %}
+
+{% block name %}
+SETTINGS
+{% endblock %}
+
+
+{% block main %}
+
+    <p style="color:green;position:absolute;margin-top:-3.4ex;margin-left:20%;">{{msg}}</p>
+
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;">
+    <div class="row">
+        <div class="col s2">
+            <span class="material-icons" style="font-size:15ex;">
+            manage_accounts
+            </span>
+        </div>
+        <div class="col s4">
+            <h3 style="text-transform:uppercase;">{{user.name}} <span style="position:absolute;right:15%;font-size:1.5ex;">{{user.plan}}</span></h3>
+            <p>USER NAME: {{user.user}}</p>
+            <p>EMAIL: {{user.email }}</p>
+            <p>WALLET ADD: {{user.wallet}}</p>
+            <p>PASSWORD: {{user.password}}</p>
+        </div>
+
+    </div>
+</div>
+<form method="post" target="_self">
+    {% csrf_token %}
+<div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+padding:2ex;color:white;margin-top:2ex;">
+    <label>MAKE NEW UPDATE </label>
+    <br/>
+    <div class="col s4 input-field" style="background-color:white;">
+    <select onchange="Sec()" id="select">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="email">EMAIL</option>
+      <option value="user_name">USER NAME</option>
+      <option value="wallet">WALLET ADD</option>
+      <option value="pword">PASSWORD</option>
+    </select>
+
+    </div>
+
+    <div class="col s4 input-field" style="background-color:white;margin-left:2ex;">
+        <input name="update" type="text" placeholder="NEW VALUE">
+    </div>
+
+        <div class="col s3 input-field" style="background-color:;margin-left:ex;">
+        <button class="btn-large waves-effect" type="submit">update</button>
+    </div>
+
+</div>
+</form>
+<script>
+    select = document.getElementById("select");
+
+    function Sec(){
+        select.name = select.value
+
+    }
+</script>
+{% endblock %}

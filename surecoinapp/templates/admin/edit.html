@@ -1,0 +1,158 @@
+{% extends 'user/account.html' %}
+{% block title %}
+admin
+{% endblock %}
+
+{% block name %}
+ADMINISTRATION SETTINGS
+{% endblock %}
+
+{% block navb %}
+<a href="/account/" class="waves-effect waves-light btn cc"><i class="material-icons left">account_circle</i>ACCOUNT</a>
+<a href="/admin/" class="waves-effect waves-light btn cc"><i class="material-icons left">admin_panel_settings</i>ADMIN</a>
+<a href="//" class="waves-effect waves-light btn cc"><i class="material-icons left">settings</i>SITE MANAGE</a>
+
+{% endblock%}
+
+{% block main %}
+<div class="row">
+    <P class="center red-text" style="text-transform:uppercase;">{{error}}</P>
+
+    <div class="col s6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">{{mem.user}} <span class="right">${{mem.balance}}.0</span> </span>
+                <p>Name: {{mem.name}} </p>
+                <p>Email: {{mem.email}} </p>
+                <p>Password: {{mem.password}} </p>
+                <p>wallet: {{mem.wallet}}</p>
+                <br/>
+                <p>
+                    <a href="https://surecoin.uk/admin/?user={{mem.user}}&approve={{mem.active_deposit}}" class="btn waves-effect">Approve deposit ${{mem.active_deposit}}</a> <span class="right">Active Dep <br/>${{mem.pay_approve}}.0</span>
+                </p>
+            </div>
+            <div class="card-action">
+                <span class="material-icons white-text"> delete</span><a href="/admin/?delete={{mem.user}}">This is a link</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="card blue-grey darken-1">
+            <form method="POST" target="_self">
+                 {% csrf_token %}
+            <div class="card-content white-text">
+                <span class="card-title">TOTAL BAL: <span class="right">${{mem.balance}}.0</span> </span>
+                <p>paydate: {{mem.payday}} </p>
+                <p>deposit date: {{mem.duration}} </p>
+                <p>Active Dep: ${{mem.active_deposit}} </p>
+                <br/>
+
+                <label>MAKE UPDATE</label>
+                <select multiple id="select" onchange="sele()">
+                    <option value="bal">TOTAL BAL</option>
+                    <option value="a_deposit">ACTIVE DEPOSITE</option>
+                </select>
+                <input name="update" class="white" placeholder="new value" type="text" style="padding-left:2ex;" >
+                <p class="center">
+                    <button  class="btn blue waves-effect " type="submit">update</button>
+                </p>
+            </div>
+            </form>
+                <div class="card-action">
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="card blue-grey darken-1">
+            <form method="POST" target="_self">
+                 {% csrf_token %}
+            <div class="card-content white-text">
+                <span class="card-title"> <i class="im im-mail"></i>MAIL <span class="right" style="font-size:2ex;">{{mem.email}}</span> </span>
+
+
+                <label>SUBJECT</label>
+
+                <input name="subject" class="white" placeholder="SUBJECT" type="text" style="padding-left:2ex;width:95%;" >
+              <label>MESSAGE</label>
+              <textarea name="msg" class="white" style="padding:2ex;min-width:100%;min-height:15ex;"></textarea>
+
+                <p class="center">
+                    <button  class="btn blue waves-effect " type="submit">send</button>
+                </p>
+            </div>
+            </form>
+                <div class="card-action">
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="card blue-grey darken-1">
+            <form method="POST" target="_self">
+                 {% csrf_token %}
+            <div class="card-content white-text">
+                <span class="card-title"><i class="im im-bell"> </i>NOTIFICATION <span class="right" style="font-size:2ex;"></span> </span>
+
+                <P>{{mem.title}}<span><button class="btn red right" type="submit">DEL</button></span></P>
+                <br/>
+                <label>TITLE</label>
+
+                <input name="title" class="white" placeholder="TITLE" type="text" style="padding-left:2ex;width:95%;" >
+              <label>MESSAGE</label>
+              <textarea name="msg" class="white" style="padding:2ex;min-width:100%;min-height:15ex;"></textarea>
+
+                <p class="center">
+                    <button  class="btn blue waves-effect " type="submit">send</button>
+                </p>
+            </div>
+            </form>
+                <div class="card-action">
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+     <table>
+            <thead>
+            <tr>
+                <th>Transaction</th>
+                <th>Status</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Approve</th>
+            </tr>
+            </thead>
+            {% for his in His %}
+                {% ifequal his.status 'pending..' %}
+                    <tbody>
+                    <tr>
+                        <td>{{his.type}}</td>
+                        <td>{{his.status}}</td>
+                        <td>${{his.amount}}</td>
+                        <td>{{his.his_date}}</td>
+                        <td>
+                            <form method="post" target="_self">
+                                {% csrf_token %}
+                                <input name="status" value="{{his.pk}}" style="display:none;">
+
+                            <button class="btn waves-effect">Approve</button>
+                             </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                {% endifequal %}
+            {% endfor %}
+
+        </table>
+
+</div>
+
+<script>
+     select = document.getElementById('select');
+     select2 = document.getElementById('select2');
+     function sele(){
+        select.name = select.value;
+        select2.name = select2.value;
+             }
+</script>
+{% endblock %}

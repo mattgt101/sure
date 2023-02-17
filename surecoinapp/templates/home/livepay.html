@@ -1,0 +1,39 @@
+{% extends 'home/index.html' %}
+{% block title %}live payment {% endblock %}
+
+{% block content %}
+    <div class="parallax-container" style="height:30ex;margin-top:-3ex;width:100%;">
+      <div class="parallax"><img class="imgs" src="https://th.bing.com/th/id/R.807dec142b9b379badcde4a51662dfe6?rik=Sdo8qT%2bKi3HgjA&pid=ImgRaw&r=0" style="width:100%;"></div>
+    </div>
+    <div style="position:absolute;margin:-20ex 40%; ">
+        <h3 style="color:white;"><b>{% block name %}LIVE PAYMENT {% endblock %}</b></h3>
+    </div>
+{% block signup %}
+<div class="row" style="margin-top:5ex;">
+<table class="col s8 push-s2">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+
+            {% for his_w in wit %}
+            {% ifequal his_w.status 'successful' %}
+            <tbody>
+            <tr>
+                <td>{{his_w.user}}</td>
+                <td>${{his_w.amount}}</td>
+                <td><span style="border:2px solid blue;border-radius:2ex;background-color:blue;color:white;padding:1ex;"><b>BTC</b></span></td>
+                <td>{{his_w.date.date}}</td>
+            </tr>
+            </tbody>
+            {% endifequal %}
+            {% endfor %}
+        </table>
+</div>
+{% endblock %}
+
+{% endblock %}

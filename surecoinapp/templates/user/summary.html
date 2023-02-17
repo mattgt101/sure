@@ -1,0 +1,35 @@
+{% extends 'auth/signup.html' %}
+{% block title %}
+summary
+{% endblock %}
+
+{% block name %}
+SUMMARY
+{% endblock %}
+
+{% block signup %}
+ <div class="row">
+        <div class="col s8 push-s2" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+           padding:2ex;color:white;margin-top:3ex;">
+
+            <h5>{{user.plan}} <span style="font-size:1.5ex;float:right;">{{du}}</span></h5>
+            <hr/>
+            <p>Profit: <span style="float:right;">${{user.profit}}</span></p>
+            <p>Principal Return: <span style="float:right;">Yes</span></p>
+            <p>Principal Withdraw: <span style="float:right;">Not available</span></p>
+            <p>Credit Amount: <span style="float:right;">${{user.active_deposit}}</span></p>
+            <p>Deposit Fee: <span style="float:right;">0.00% + $0.00 (min. $0.00 max. $0.00)</span></p>
+            <p>Deposit Amount: <span style="float:right;">$a</span></p>
+
+            <center>
+                {% load static %}
+                <img src="{% static 'qr.jpeg' %}" style="width:15%;"></img>
+                <p><b>{{site.wallet}}</b></p>
+                <label>MAKE PAYMENT TO THE ABOVE BITCOIN WALLET ADDRESS TO CONTINUE </label>
+            <br/><a href="/account/" class="btn blue">done</a>
+            </center>
+
+     </div>
+
+ </div>
+{% endblock %}

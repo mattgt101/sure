@@ -1,0 +1,38 @@
+{% extends 'auth/signup.html' %}
+{% block title %}
+login
+{% endblock %}
+
+{% block name %}
+LOGIN
+{% endblock %}
+
+{% block form %}
+<style>
+      .wrapss{width:60% !important; margin-left:20% !important;}
+
+</style>
+            <center>
+                <p style="color:red;">{{error}}</p>
+            </center>
+
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+          <input name="user"  id="disabled" type="text" class="validate">
+          <label for="disabled">YOUR USER_NAME</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">password</i>
+          <input name="pword" id="password" type="password" class="validate">
+          <label for="password">PASSWORD</label>
+        </div>
+      </div>
+<center>
+    <button class="btn-large waves-effect waves-light" type="submit">login</button>
+
+    <p>Don't have an account ? <a href="/signup/">sign-up</a></p>
+</center>
+{% endblock %}

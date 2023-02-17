@@ -1,0 +1,197 @@
+{% extends 'auth/signup.html' %}
+{% block title %}
+Account
+{% endblock %}
+
+{% block name %}
+ACCOUNT
+{% endblock %}
+
+{% block signup %}
+<style>
+    .cc{width:90%;margin-bottom:2ex;background-color:#001546;}
+</style>
+
+<br xmlns="http://www.w3.org/1999/html"/><br/>
+<div class="row" style="width:80%;">
+    <!--the navs -->
+
+    <div class="col s3">
+        {% block navb %}
+        <a href="/account/" class="waves-effect waves-light btn cc"><i class="material-icons left">account_circle</i>ACCOUNT</a>
+        <a href="/deposit/" class="waves-effect waves-light btn cc"><i class="im im-cc-bitcoin left"></i>DEPOSIT</a>
+        <a href="/withdraw/" class="waves-effect waves-light btn cc"><i class="material-icons left">account_balance</i>WITHDRAW</a>
+        <a href="/ref/" class="waves-effect waves-light btn cc"><i class="material-icons left">person_add_alt</i>REFERRED</a>
+        <a href="/history/" class="waves-effect waves-light btn cc"><i class="material-icons left">history</i>HISTORY</a>
+        <a href="/settings/" class="waves-effect waves-light btn cc"><i class="material-icons left">manage_accounts</i>SETTINGS</a>
+        <a href="/security/" class="waves-effect waves-light btn cc"><i class="material-icons left">verified_user</i>SECURITY</a>
+        <a href="/logout/" class="waves-effect waves-light btn cc"><i class="material-icons left">logout</i>LOGOUT</a>
+ {% endblock %}
+    </div>
+
+    <!--the navs ends-->
+
+    <!--the main sec -->
+    <div class="col s9">
+        {% block main %}
+        {% if user.title %}
+          <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger pulse" href="#modal1" style="margin-bottom:2ex;">
+      <i class="im im-bell left"></i>1</a>
+        {% endif %}
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 style="text-transform:uppercase;">{{user.title}}</h4>
+      <p>{{user.message}}</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat left"><i class="im im-mail"></i> contact support</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OKAY</a>
+    </div>
+  </div>
+        <div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+           padding:2ex;color:white;">
+            <div class="row">
+                <div class="col s2 ">
+                    <span class="material-icons" style="font-size:13ex;">
+                    account_circle
+                    </span>
+                </div>
+                <div class="col s6 " style="">
+                    <p style="text-transform:uppercase;">WELCOME BACK, {{user.name}} ({{user.user}})</p>
+                </div>
+                <div class="col s4 push-s1">
+                    <br/>
+                    <a href="/settings/" class="waves-effect waves-light btn" style="border-radius:3ex;"><i class="material-icons left">manage_accounts</i>SETTINGS</a>
+                    <br/><br/> <a href="/security/" class="waves-effect waves-light btn" style="border-radius:3ex;"><i class="material-icons left">verified_user</i>SECURITY</a>
+
+                    <br/><br/> <a href="/admin/" class="waves-effect waves-light btn" style="border-radius:3ex;display:{{admin}};width:20ex;"><i class="material-icons left">manage_accounts</i>ADMIN</a>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--the warn for 2fa-->
+
+        <div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');
+        color:white;margin-top:3ex;">
+            <div style="display:{{hid}};">
+            <p><span class="material-icons" style="color:yellow;position:absolute;">
+            warning
+            </span><span style="margin-left:6ex;"> Security Note: please, <a href="/security/"> activate Two Factor Authentication</a> to keep your account safe. </span></p>
+
+            </div>
+            <span style="font-size:3ex;">{{msg}}</span>
+        </div>
+
+        <!--the warn ends-->
+
+        <!--the bal -->
+        <div class="row" style="margin-top:35ex;position:relative;">
+            <div class="col s6">
+                <div style="background-image:url('https://th.bing.com/th/id/OIP.CDo5is6MukRASq7ZHXiQewHaEo?pid=ImgDet&w=1680&h=1050&rs=1');padding:2ex;color:white;
+                    background-position:50% 50%; background-size:100%;">
+                  <div class="row">
+                      <div class="col s3">
+                          <img src="https://globalcoinsfx.com/images/plan1-min.png" style="background-color:#06065d8a;border-radius:2ex;">
+                      </div>
+                      <div class="col s8 right">
+                        <h3 style="text-align:right;">${{ bal }}</h3>
+                          <p style="position:absolute;margin-top:-1ex;left:25%;">ACCOUNT BALANCE</p>
+                      </div>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div style="background-image:url('https://th.bing.com/th/id/OIP.CDo5is6MukRASq7ZHXiQewHaEo?pid=ImgDet&w=1680&h=1050&rs=1');padding:2ex;color:white;
+                    background-position:50% 50%; background-size:100%;">
+                  <div class="row">
+                      <div class="col s3">
+                          <img src="https://globalcoinsfx.com/images/plan2-min.png" style="background-color:#06065d8a;border-radius:2ex;">
+
+                      </div>
+                    <div class="col s8 right">
+                        <h3 style="text-align:right;">${{ user.pay_approve }}</h3>
+                          <p style="position:absolute;margin-top:-1ex; right:3.5%;">ACTIVE DEPOSIT </p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        <!--end the bal-->
+
+        <!--THE AFFILIATE -->
+            <div class="col s12" style="background-image:url('https://wallpapercave.com/wp/wp3006091.jpg');">
+                <center>
+                    <h6 style="color:white;">AFFILIATE PROGRAM</h6>
+                </center>
+                <div class="row" style="background-color:white;padding:1ex;border-radius:1ex;width:95%;margin-left:3%;">
+                    <div class="col s10">
+                        <span class="material-icons">
+                        person_add_alt
+                        </span>
+                        <input id="myInput" value="https://surecoins.uk/?ref={{user.user}}" readonly>
+                    </div>
+
+                    <div class="col s2">
+                        <a onclick="myFunction()" class="btn">copy</a>
+                    </div>
+
+                </div>
+            </div>
+        <!--END THE AFFILIATE-->
+
+        <!--the badge-->
+        <div class="col s6">
+       <p style="padding:1ex;background-color:#000b2b;color:white;">Pending Withdrawal:<span style="background-color:#3f51b5;color:yellow;float:right;padding:1ex;margin-top:-1ex;">$0.0</span></p>
+       <p style="margin:-1.5ex 0px -1.5ex 0px ;padding:1ex;background-color:#000b2b;color:white;">Withdrew Total:<span style="background-color:#3f51b5;color:yellow;float:right;padding:1ex;margin-top:-1ex;">${{user.t_withdraw}}.0</span></p>
+       <p style="padding:1ex;background-color:#000b2b;color:white;">Earned Total:<span style="background-color:#3f51b5;color:yellow;float:right;padding:1ex;margin-top:-1ex;">${{user.t_profit}}.0</span></p>
+        </div>
+        <div class="col s6">
+                   <p style="padding:1ex;background-color:#000b2b;color:white;">Last Deposit:<span style="background-color:#3f51b5;color:yellow;float:right;padding:1ex;margin-top:-1ex;">${{user.pay_approve}}.0</span></p>
+       <p style="margin:-1.5ex 0px -1.5ex 0px ;padding:1ex;background-color:#000b2b;color:white;">Total Deposit:<span style="background-color:#3f51b5;color:yellow;float:right;padding:1ex;margin-top:-1ex;">${{user.t_dep}}.0</span></p>
+       <p style="padding:1ex;background-color:#000b2b;color:white;">Last Withdrawal: <span style="background-color:#3f51b5;color:yellow;float:right;padding:1ex;margin-top:-1ex;">${{user.l_withraw}}.0</span></p>
+
+
+        </div>
+
+
+        <!--the badge ends-->
+        {% endblock %}
+    </div>
+
+    <!--end the main section-->
+
+</div>
+
+<script>
+    $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+    function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("share referral link to earn: " + copyText.value);
+
+
+
+
+}
+</script>
+
+{% endblock %}
